@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Floating GIF Preview</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <h1>Click the floating GIF circle to open the modal</h1>
+      <p>The circle will follow you as you scroll.</p>
+    </div>
+
+    <!-- Floating circle button -->
+    <div class="floating-button">
+      <img
+        class="video-preview"
+        src="https://www.dropbox.com/scl/fi/kgf7knm8s3gn103amn0ne/JessPreview-gif.gif?rlkey=jgi3eyj6f6qux1q8sdtaxfuvi&raw=1"
+        alt="Preview GIF"
+      />
+    </div>
+
+    <!-- Modal overlay -->
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Video Title</span>
+          <button class="close-button">×</button>
+        </div>
+        <div class="iframe-container">
+          <iframe src="https://example.com"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
