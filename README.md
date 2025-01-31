@@ -1,5 +1,9 @@
 # PortalisAI Avatar Templates
 
+## Example Site
+
+You can view an example site showcasing the templates [here](https://emmanuelahonle1.github.io/portalisAI-avatar-templates/).
+
 ## Purpose
 
 The purpose of this repository is to provide a collection of customizable avatar templates for use with the PortalisAI platform. These templates are designed to help users create unique and personalized avatars for various applications, including social media, gaming, and virtual meetings.
