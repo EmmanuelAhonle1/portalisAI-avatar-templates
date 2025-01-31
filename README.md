@@ -63,6 +63,8 @@ Example:
 
 We welcome contributions from the community. If you have a new template or improvements to existing ones, please submit a pull request.
 
+Suggestion can also be made to our #integration-ideas in our [Portalis AI Community Discord](https://discord.gg/54f3uz99)
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
