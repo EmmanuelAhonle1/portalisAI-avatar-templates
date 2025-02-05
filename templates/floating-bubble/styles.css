@@ -28,6 +28,11 @@
 .floating-button:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
+    background: rgba(211, 211, 211, 0.5); /* Light grey overlay */
+}
+
+.floating-button:hover .video-preview {
+    opacity: 0.5; /* Ensure video is dimmed by the overlay */
 }
 
 /* Video/GIF preview styling */

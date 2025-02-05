@@ -6,35 +6,46 @@ const videoPreview = document.querySelector(".video-preview");
 const chatIframe = document.querySelector("#chat-iframe");
 
 const avatarPreviewURL =
-  "https://www.dropbox.com/scl/fi/kgf7knm8s3gn103amn0ne/JessPreview-gif.gif?rlkey=jgi3eyj6f6qux1q8sdtaxfuvi&raw=1";
+  "https://www.dropbox.com/scl/fi/7z3y6fxma23uoifzy13ak/Jess-Preview.mp4?rlkey=0h20xim0qaifrqlirpx1kwxcy&st=yci8yvda&raw=1";
 
 const activeCallURL =
-  "https://www.dropbox.com/scl/fi/q3l7ziytd0yocmioihz4h/phone-image.jpg?rlkey=squ318l4z2ucvb22c9zji3aju&st=mrycwnkb&raw=1";
+  "https://www.dropbox.com/scl/fi/0kxx4enwsv0hnu0omp2ry/x_image.png?rlkey=77mn0c4bi0ne8hy2le2z5wvfe&st=lvv9mvx7&raw=1";
 
+const avatarPreviewHTML = `
+      <video class="video-preview" autoplay loop muted playsinline>
+        <source
+          src="${avatarPreviewURL}"
+          type="video/mp4"
+        />
+      </video>`;
+
+const activeCallHTML = `
+      <img class="video-preview" src="${activeCallURL}"/>
+      `;
 // Open modal when clicking the floating button
 floatingButton.addEventListener("click", () => {
   modalOverlay.classList.add("active");
-  videoPreview.setAttribute("src", activeCallURL);
+  floatingButton.innerHTML = activeCallHTML;
 });
 
 modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) {
     modalOverlay.classList.remove("active");
-    videoPreview.setAttribute("src", avatarPreviewURL);
+    floatingButton.innerHTML = avatarPreviewHTML;
   }
 });
 
 // Close modal when clicking close button or outside modal
 closeButton.addEventListener("click", () => {
   modalOverlay.classList.remove("active");
-  videoPreview.setAttribute("src", avatarPreviewURL);
+  floatingButton.innerHTML = avatarPreviewHTML;
 });
 
 // Close modal with escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     modalOverlay.classList.remove("active");
-    videoPreview.setAttribute("src", avatarPreviewURL);
+    floatingButton.innerHTML = avatarPreviewHTML;
   }
 });
 
@@ -58,3 +69,5 @@ console.log = function (...args) {
   }
   originalConsoleLog.apply(console, args);
 };
+
+floatingButton.innerHTML = avatarPreviewHTML;
