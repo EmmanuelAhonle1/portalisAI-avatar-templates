@@ -22,23 +22,26 @@ const avatarPreviewHTML = `
 const activeCallHTML = `
       <img class="video-preview" src="${activeCallURL}"/>
       `;
+
+let isAvatarPreview = true; // Flag to track the current state
+
 // Open modal when clicking the floating button
 floatingButton.addEventListener("click", () => {
-  modalOverlay.classList.add("active");
-  floatingButton.innerHTML = activeCallHTML;
-});
-
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) {
+  if (isAvatarPreview) {
+    modalOverlay.classList.add("active");
+    floatingButton.innerHTML = activeCallHTML;
+  } else {
     modalOverlay.classList.remove("active");
     floatingButton.innerHTML = avatarPreviewHTML;
   }
+  isAvatarPreview = !isAvatarPreview; // Toggle the state
 });
 
 // Close modal when clicking close button or outside modal
 closeButton.addEventListener("click", () => {
   modalOverlay.classList.remove("active");
   floatingButton.innerHTML = avatarPreviewHTML;
+  isAvatarPreview = true; // Reset to avatar preview state
 });
 
 // Close modal with escape key
@@ -46,6 +49,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     modalOverlay.classList.remove("active");
     floatingButton.innerHTML = avatarPreviewHTML;
+    isAvatarPreview = true; // Reset to avatar preview state
   }
 });
 
