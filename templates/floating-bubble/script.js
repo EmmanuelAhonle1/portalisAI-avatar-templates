@@ -31,25 +31,40 @@ floatingButton.addEventListener("click", () => {
     modalOverlay.classList.add("active");
     floatingButton.innerHTML = activeCallHTML;
   } else {
-    modalOverlay.classList.remove("active");
-    floatingButton.innerHTML = avatarPreviewHTML;
+    modalOverlay.querySelector(".modal-content").style.animation =
+      "slideOutToSide 0.5s ease-out";
+    setTimeout(() => {
+      modalOverlay.classList.remove("active");
+      floatingButton.innerHTML = avatarPreviewHTML;
+      modalOverlay.querySelector(".modal-content").style.animation = ""; // Reset animation
+    }, 500); // Match the duration of the slideOutToSide animation
   }
   isAvatarPreview = !isAvatarPreview; // Toggle the state
 });
 
 // Close modal when clicking close button or outside modal
 closeButton.addEventListener("click", () => {
-  modalOverlay.classList.remove("active");
-  floatingButton.innerHTML = avatarPreviewHTML;
-  isAvatarPreview = true; // Reset to avatar preview state
+  modalOverlay.querySelector(".modal-content").style.animation =
+    "slideOutToSide 0.5s ease-out";
+  setTimeout(() => {
+    modalOverlay.classList.remove("active");
+    floatingButton.innerHTML = avatarPreviewHTML;
+    modalOverlay.querySelector(".modal-content").style.animation = ""; // Reset animation
+    isAvatarPreview = true; // Reset to avatar preview state
+  }, 500); // Match the duration of the slideOutToSide animation
 });
 
 // Close modal with escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    modalOverlay.classList.remove("active");
-    floatingButton.innerHTML = avatarPreviewHTML;
-    isAvatarPreview = true; // Reset to avatar preview state
+    modalOverlay.querySelector(".modal-content").style.animation =
+      "slideOutToSide 0.5s ease-out";
+    setTimeout(() => {
+      modalOverlay.classList.remove("active");
+      floatingButton.innerHTML = avatarPreviewHTML;
+      modalOverlay.querySelector(".modal-content").style.animation = ""; // Reset animation
+      isAvatarPreview = true; // Reset to avatar preview state
+    }, 500); // Match the duration of the slideOutToSide animation
   }
 });
 

@@ -53,6 +53,10 @@
     pointer-events: auto;
 }
 
+.modal-overlay.active .modal-content {
+    animation: slideInFromSide 0.5s ease-out;
+}
+
 /* Modified modal content styles */
 .modal-content {
     background: white;
@@ -63,6 +67,24 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+@keyframes slideInFromSide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToSide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
 }
 
 .modal-header {
